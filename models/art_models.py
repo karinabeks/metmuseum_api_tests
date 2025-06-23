@@ -1,14 +1,16 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import Optional, List
+
 
 class ArtObject(BaseModel):
     objectID: int
     title: str
-    artistDisplayName: str
-    objectDate: str
-    objectName: str
-    medium: Optional[str]
+    artistDisplayName: Optional[str]
+    objectDate: Optional[str]
+    primaryImage: Optional[str]
+    objectURL: Optional[str]
+
 
 class SearchResponse(BaseModel):
     total: int
-    objectIDs: List[int]
+    objectIDs: Optional[List[int]]
